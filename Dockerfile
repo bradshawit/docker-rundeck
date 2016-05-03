@@ -6,9 +6,14 @@ RUN apt-get update -q && \
     apt-get install -qy wget && \
     apt-get install -qy openssh-client && \
     apt-get clean
-    
+
 RUN wget http://dl.bintray.com/rundeck/rundeck-deb/rundeck-2.6.7-1-GA.deb && \
     dpkg -i rundeck-2.6.7-1-GA.deb
     
+ADD launch.sh /launch.sh
+
+RUN chmod +x "/launch.sh"
+    
 EXPOSE 4440
 
+CMD ["/launch.sh"]
