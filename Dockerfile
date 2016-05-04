@@ -21,5 +21,6 @@ VOLUME  ["/var/rundeck"]
 VOLUME  ["/var/lib/rundeck"]
 VOLUME  ["/var/log/rundeck"]
 
-CMD ["/launch.sh"]
-CMD ["tail -f /var/log/rundeck/rundeck.log"]
+# CMD ["/launch.sh"]
+# CMD ["tail -f /var/log/rundeck/rundeck.log"]
+ENTRYPOINT ["/launch.sh"]
