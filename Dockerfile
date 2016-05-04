@@ -22,5 +22,3 @@ VOLUME  ["/var/lib/rundeck"]
 VOLUME  ["/var/log/rundeck"]
 
 CMD ["/launch.sh"]
-
-ENTRYPOINT ["/bin/bash"]
