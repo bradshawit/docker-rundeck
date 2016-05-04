@@ -3,14 +3,11 @@ FROM ubuntu:xenial
 RUN apt-get update -q && \
     apt-get upgrade -qy && \
     apt-get install -qy openjdk-8-jre-headless && \
-    apt-get install -qy wget && \
     apt-get install -qy openssh-client && \
     apt-get clean
 
 ADD ["http://dl.bintray.com/rundeck/rundeck-deb/rundeck-2.6.7-1-GA.deb", "/rundeck.deb"] && \
-    dpkg -i /rundeck.deb
-# RUN wget http://dl.bintray.com/rundeck/rundeck-deb/rundeck-2.6.7-1-GA.deb && \
-#     dpkg -i rundeck-2.6.7-1-GA.deb
+    dpkg -i /rundeck.deb && rm -f /rundeck.deb
     
 ADD launch.sh /launch.sh
 
@@ -24,5 +21,3 @@ VOLUME  ["/var/lib/rundeck"]
 VOLUME  ["/var/log/rundeck"]
 
 CMD ["/launch.sh"]
-# CMD ["tail -f /var/log/rundeck/rundeck.log"]
-# ENTRYPOINT ["/launch.sh"]
