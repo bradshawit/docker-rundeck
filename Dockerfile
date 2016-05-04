@@ -16,8 +16,9 @@ RUN chmod +x "/launch.sh"
     
 EXPOSE 4440
 
-VOLUME  ["/etc/rundeck", "/var/rundeck", "/var/lib/rundeck", "/var/log/rundeck"]
-VOLUME  ["/etc/rundeck", "/var/rundeck", "/var/lib/rundeck", "/var/log/rundeck"]
-VOLUME  ["/etc/rundeck", "/var/rundeck", "/var/lib/rundeck", "/var/log/rundeck"]
+VOLUME  ["/etc/rundeck"]
+VOLUME  ["/var/rundeck"]
+VOLUME  ["/var/lib/rundeck"]
+VOLUME  ["/var/log/rundeck"]
 
 CMD ["/launch.sh"]
