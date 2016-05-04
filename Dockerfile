@@ -10,9 +10,9 @@ RUN apt-get update -q && \
 RUN wget http://dl.bintray.com/rundeck/rundeck-deb/rundeck-2.6.7-1-GA.deb && \
     dpkg -i rundeck-2.6.7-1-GA.deb
     
-ADD launch.sh /launch.sh
+# ADD launch.sh /launch.sh
 
-RUN chmod +x "/launch.sh"
+# RUN chmod +x "/launch.sh"
     
 EXPOSE 4440
 
@@ -21,6 +21,6 @@ VOLUME  ["/var/rundeck"]
 VOLUME  ["/var/lib/rundeck"]
 VOLUME  ["/var/log/rundeck"]
 
-CMD ["/launch.sh"]
+# CMD ["/launch.sh"]
 
 ENTRYPOINT ["/etc/rundeck"]
