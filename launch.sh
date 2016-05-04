@@ -2,5 +2,5 @@
 
 set -e
 
-/etc/init.d/rundeckd start
+/etc/init.d/rundeckd start &
 wait
